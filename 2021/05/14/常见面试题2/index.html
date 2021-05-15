@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      86
+      85
        分钟
     </span>
   
@@ -343,7 +343,8 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 <p>解释：允许单个元素与其他元素不一样的对齐方式，可覆盖align-items属性，默认值为auto，表示基础呢个父元素的align-items若无父元素，则等同于stretch</p>
 <h3 id="3-grid网格布局"><a href="#3-grid网格布局" class="headerlink" title="3, grid网格布局"></a>3, grid网格布局</h3><p>网格布局（Grid）是最强大的 CSS 布局方案。</p>
 <p>它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032501.png" srcset="/img/loading.gif" alt="1_bg2019032501"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032501.png" srcset="/img/loading.gif" alt="1_bg2019032501" style="zoom:67%;" />
+
 <p>采用网格布局的区域，称为”容器”（container）。容器内部采用网格定位的子元素，称为”项目”（item）。</p>
 <div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -355,80 +356,79 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 <p>上面代码中，最外层的<code>&lt;div&gt;</code>元素就是容器，内层的三个<code>&lt;div&gt;</code>元素就是项目。</p>
 <p>注意：项目只能是容器的顶层子元素，不包含项目的子元素，比如上面代码的<code>&lt;p&gt;</code>元素就不是项目。Grid 布局只对项目生效。</p>
 <p>容器里面的水平区域称为”行”（row），垂直区域称为”列”（column）。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032502.png" srcset="/img/loading.gif" alt="1_bg2019032502"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032502.png" srcset="/img/loading.gif" alt="1_bg2019032502" style="zoom: 67%;" />
+
 <p>上图中，水平的深色区域就是”行”，垂直的深色区域就是”列”。</p>
 <p>行和列的交叉区域，称为”单元格”（cell）。</p>
 <p>正常情况下，<code>n</code>行和<code>m</code>列会产生<code>n x m</code>个单元格。比如，3行3列会产生9个单元格。</p>
 <p>划分网格的线，称为”网格线”（grid line）。水平网格线划分出行，垂直网格线划分出列。</p>
 <p>正常情况下，<code>n</code>行有<code>n + 1</code>根水平网格线，<code>m</code>列有<code>m + 1</code>根垂直网格线，比如三行就有四根水平网格线。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032503.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032503.png" srcset="/img/loading.gif" alt="img" style="zoom: 67%;" />
+
 <p>上图是一个 4 x 4 的网格，共有5根水平网格线和5根垂直网格线。</p>
 <h6 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h6><p>Grid 布局的属性分成两类。一类定义在容器上面，称为容器属性；另一类定义在项目上面，称为项目属性。这部分先介绍容器属性。</p>
 <h6 id="1-display属性：-display-grid指定一个容器采用网格布局"><a href="#1-display属性：-display-grid指定一个容器采用网格布局" class="headerlink" title="1, display属性： display: grid指定一个容器采用网格布局"></a>1, display属性： display: grid指定一个容器采用网格布局</h6><p>Display默认是块级元素</p>
-<div class="hljs"><pre><code class="hljs applescript">&lt;span&gt;foo&lt;/span&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-1&quot;</span>&gt;<span class="hljs-number">1</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-2&quot;</span>&gt;<span class="hljs-number">2</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-3&quot;</span>&gt;<span class="hljs-number">3</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-4&quot;</span>&gt;<span class="hljs-number">4</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-5&quot;</span>&gt;<span class="hljs-number">5</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-6&quot;</span>&gt;<span class="hljs-number">6</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-7&quot;</span>&gt;<span class="hljs-number">7</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-8&quot;</span>&gt;<span class="hljs-number">8</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-9&quot;</span>&gt;<span class="hljs-number">9</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+<div class="hljs"><pre><code class="hljs applescript">&lt;span&gt;wangyaru&lt;/span&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">1</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">2</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">3</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">4</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">5</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">6</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">7</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">8</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">9</span>&lt;/<span class="hljs-keyword">div</span>&gt;
 &lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;span&gt;bar&lt;/span&gt;
+&lt;span&gt;wangyaru&lt;/span&gt;
 
-.container&#123;
+.wrap &#123;
   display: grid;
-  grid-template-columns: <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px;
-  grid-template-rows: <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px;
+  grid-template-rows: <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px;
+  grid-template-columns: <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px;
 &#125;
 
-.<span class="hljs-built_in">item</span> &#123;
-  font-size: <span class="hljs-number">2</span>em;
-  <span class="hljs-built_in">text</span>-align: center;
-  border: <span class="hljs-number">1</span>px solid <span class="hljs-comment">#e5e4e9;</span>
-&#125;
-</code></pre></div>
-
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210515230538765.png" srcset="/img/loading.gif" alt="image-20210515230538765"></p>
-<p>也可以设置为行内元素: display: inline-grid</p>
-<div class="hljs"><pre><code class="hljs applescript">&lt;span&gt;foo&lt;/span&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-1&quot;</span>&gt;<span class="hljs-number">1</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-2&quot;</span>&gt;<span class="hljs-number">2</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-3&quot;</span>&gt;<span class="hljs-number">3</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-4&quot;</span>&gt;<span class="hljs-number">4</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-5&quot;</span>&gt;<span class="hljs-number">5</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-6&quot;</span>&gt;<span class="hljs-number">6</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-7&quot;</span>&gt;<span class="hljs-number">7</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-8&quot;</span>&gt;<span class="hljs-number">8</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item item-9&quot;</span>&gt;<span class="hljs-number">9</span>&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;span&gt;bar&lt;/span&gt;
-
-.container&#123;
-  display: inline-grid;
-  grid-template-columns: <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px;
-  grid-template-rows: <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px <span class="hljs-number">50</span>px;
-&#125;
-
-.<span class="hljs-built_in">item</span> &#123;
-  font-size: <span class="hljs-number">2</span>em;
-  <span class="hljs-built_in">text</span>-align: center;
-  border: <span class="hljs-number">1</span>px solid <span class="hljs-comment">#e5e4e9;</span>
+.wrap <span class="hljs-keyword">div</span> &#123;
+	border: <span class="hljs-number">1</span>px solid rgb(<span class="hljs-number">60</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>);
 &#125;</code></pre></div>
 
-<h6 id="2-grid-template-columns属性、frind-template-rows属性"><a href="#2-grid-template-columns属性、frind-template-rows属性" class="headerlink" title="2, grid-template-columns属性、frind-template-rows属性"></a>2, grid-template-columns属性、frind-template-rows属性</h6><p>容器指定了网格布局以后，接着就是划分行和列。grind-tempate-columns属性定义每一列的列宽，grid-template-rows属性定义每一行的行高</p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516024658835.png" srcset="/img/loading.gif" alt="image-20210516024658835" style="zoom:50%;" />
+
+<p>也可以设置为行内元素: display: inline-grid</p>
+<div class="hljs"><pre><code class="hljs applescript">&lt;span&gt;wangyaru&lt;/span&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">1</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">2</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">3</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">4</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">5</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">6</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">7</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">8</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+  &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;<span class="hljs-number">9</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;span&gt;wangyaru&lt;/span&gt;
+
+.wrap &#123;
+  display: inline-grid;
+  grid-template-rows: <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px;
+  grid-template-columns: <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px <span class="hljs-number">100</span>px;
+&#125;
+
+.wrap <span class="hljs-keyword">div</span> &#123;
+	border: <span class="hljs-number">1</span>px solid rgb(<span class="hljs-number">60</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>);
+&#125;</code></pre></div>
+
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516024627322.png" srcset="/img/loading.gif" alt="image-20210516024627322" style="zoom:50%;" />
+
+<h6 id="2-grid-template-columns属性、grid-template-rows属性"><a href="#2-grid-template-columns属性、grid-template-rows属性" class="headerlink" title="2, grid-template-columns属性、grid-template-rows属性"></a>2, grid-template-columns属性、grid-template-rows属性</h6><p>容器指定了网格布局以后，接着就是划分行和列。grid-tempate-columns属性定义每一列的列宽，grid-template-rows属性定义每一行的行高</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
 	<span class="hljs-attribute">display</span>: grid;
-	<span class="hljs-attribute">grid-template-colums</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;
+	<span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;
 	<span class="hljs-attribute">frid-template-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;
 &#125;</code></pre></div>
 
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/qiginur/edit?css,output">上面代码</a>指定了一个三行三列的网格，列宽和行高都是<code>100px</code>。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032506.png" srcset="/img/loading.gif" alt="img"></p>
+<p>以上代码指定了一个三行三列的网格，列宽和行高都是<code>100px</code>。</p>
 <p>除了使用绝对单位，也可以使用百分比。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
   <span class="hljs-attribute">display</span>: grid;
@@ -448,7 +448,8 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 <div class="hljs"><pre><code class="hljs angelscript">grid-template-columns: repeat(<span class="hljs-number">2</span>, <span class="hljs-number">100</span>px <span class="hljs-number">20</span>px <span class="hljs-number">80</span>px);</code></pre></div>
 
 <p>上面代码定义了6列，第一列和第四列的宽度为<code>100px</code>，第二列和第五列为<code>20px</code>，第三列和第六列为<code>80px</code>。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032507.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516025053252.png" srcset="/img/loading.gif" alt="image-20210516025053252" style="zoom:50%;" />
+
 <h6 id="3-2-2-auto-fill关键字"><a href="#3-2-2-auto-fill关键字" class="headerlink" title="3.2.2, auto-fill关键字"></a>3.2.2, auto-fill关键字</h6><p>有时，单元格的大小是固定的，但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用<code>auto-fill</code>关键字表示自动填充。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
   <span class="hljs-attribute">display</span>: grid;
@@ -456,7 +457,8 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 &#125;</code></pre></div>
 
 <p>上面代码表示每列宽度<code>100px</code>，然后自动填充，直到容器不能放置更多的列。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032508.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516025201586.png" srcset="/img/loading.gif" alt="image-20210516025201586" style="zoom:50%;" />
+
 <h6 id="3-2-3，fr关键字"><a href="#3-2-3，fr关键字" class="headerlink" title="3.2.3，fr关键字"></a>3.2.3，fr关键字</h6><p>为了方便表示比例关系，网格布局提供了<code>fr</code>关键字（fraction 的缩写，意为”片段”）。如果两列的宽度分别为<code>1fr</code>和<code>2fr</code>，就表示后者是前者的两倍。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
   <span class="hljs-attribute">display</span>: grid;
@@ -464,15 +466,15 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 &#125;</code></pre></div>
 
 <p>上面代码表示两个相同宽度的列。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/1_bg2019032509.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516025324404.png" srcset="/img/loading.gif" alt="image-20210516025324404"></p>
 <p><code>fr</code>可以与绝对长度的单位结合使用，这时会非常方便。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
   <span class="hljs-attribute">display</span>: grid;
-  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">150px</span> <span class="hljs-number">1</span>fr <span class="hljs-number">2</span>fr;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">200px</span> <span class="hljs-number">1</span>fr <span class="hljs-number">2</span>fr;
 &#125;</code></pre></div>
 
 <p>上面代码表示，第一列的宽度为150像素，第二列的宽度是第三列的两半。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032510.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516025401151.png" srcset="/img/loading.gif" alt="image-20210516025401151"></p>
 <h6 id="3-2-4，minimax"><a href="#3-2-4，minimax" class="headerlink" title="3.2.4，minimax()"></a>3.2.4，minimax()</h6><p>Minimax()函数产生一个长度范围，表示长度就在这个范围之中。它接受两个参数，分别为最小值和最大值。</p>
 <div class="hljs"><pre><code class="hljs angelscript">grid-template-columns: <span class="hljs-number">1f</span>r <span class="hljs-number">1f</span>r minmax(<span class="hljs-number">100</span>px, <span class="hljs-number">1f</span>r);</code></pre></div>
 
@@ -507,7 +509,7 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 &#125;</code></pre></div>
 
 <p>以上代码<code>grid-row-gap</code>用于设置行间距，<code>grid-column-gap</code>用于设置列间距。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032511.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516025900047.png" srcset="/img/loading.gif" alt="image-20210516025900047"></p>
 <p><code>grid-gap</code>属性是<code>grid-column-gap</code>和<code>grid-row-gap</code>的合并简写形式，语法如下。</p>
 <div class="hljs"><pre><code class="hljs maxima"><span class="hljs-built_in">grid</span>-gap: &lt;<span class="hljs-built_in">grid</span>-<span class="hljs-built_in">row</span>-gap&gt; &lt;<span class="hljs-built_in">grid</span>-column-gap&gt;;</code></pre></div>
 
@@ -550,25 +552,30 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 <p>注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为<code>区域名-start</code>，终止网格线自动命名为<code>区域名-end</code>。</p>
 <p>比如，区域名为<code>header</code>，则起始位置的水平网格线和垂直网格线叫做<code>header-start</code>，终止位置的水平网格线和垂直网格线叫做<code>header-end</code>。</p>
 <h6 id="6-grid-auto-flow-属性"><a href="#6-grid-auto-flow-属性" class="headerlink" title="6, grid-auto-flow 属性"></a>6, grid-auto-flow 属性</h6><p>划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。默认的放置顺序是”先行后列”，即先填满第一行，再开始放入第二行，即下图数字的顺序。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032506-20210516014716910.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516030712086.png" srcset="/img/loading.gif" alt="image-20210516030712086" style="zoom:50%;" />
+
 <p>这个顺序由<code>grid-auto-flow</code>属性决定，默认值是<code>row</code>，即”先行后列”。也可以将它设成<code>column</code>，变成”先列后行”。</p>
 <div class="hljs"><pre><code class="hljs mel"><span class="hljs-keyword">grid</span>-auto-<span class="hljs-keyword">flow</span>: column;</code></pre></div>
 
 <p>上面代码设置了column以后，放置顺序就变成了下图</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032512.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516030733736.png" srcset="/img/loading.gif" alt="image-20210516030733736" style="zoom:50%;" />
+
 <p><code>grid-auto-flow</code>属性除了设置成<code>row</code>和<code>column</code>，还可以设成<code>row dense</code>和<code>column dense</code>。这两个值主要用于，某些项目指定位置以后，剩下的项目怎么自动放置。</p>
 <p>下面的例子让1号项目和2号项目各占据两个单元格，然后在默认的<code>grid-auto-flow: row</code>情况下，会产生下面这样的布局。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032513.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516031321065.png" srcset="/img/loading.gif" alt="image-20210516031321065" style="zoom:50%;" />
+
 <p>上图中，1号项目后面的位置是空的，这是因为3号项目默认跟着2号项目，所以会排在2号项目后面。</p>
 <p>现在修改设置，设为<code>row dense</code>，表示”先行后列”，并且尽可能紧密填满，尽量不出现空格。</p>
 <div class="hljs"><pre><code class="hljs maxima"><span class="hljs-built_in">grid</span>-auto-flow: <span class="hljs-built_in">row</span> dense;</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032514.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516031351845.png" srcset="/img/loading.gif" alt="image-20210516031351845" style="zoom:50%;" />
+
 <p>上图会先填满第一行，再填满第二行，所以3号项目就会紧跟在1号项目的后面。8号项目和9号项目就会排到第四行。</p>
 <p>如果将设置改为<code>column dense</code>，表示”先列后行”，并且尽量填满空格。</p>
 <div class="hljs"><pre><code class="hljs mel"><span class="hljs-keyword">grid</span>-auto-<span class="hljs-keyword">flow</span>: column dense;</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032515.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516031433226.png" srcset="/img/loading.gif" alt="image-20210516031433226" style="zoom:50%;" />
+
 <p>上图会先填满第一列，再填满第2列，所以3号项目在第一列，4号项目在第二列。8号项目和9号项目被挤到了第四列</p>
 <h6 id="7-justify-items属性、align-items属性、place-items属性"><a href="#7-justify-items属性、align-items属性、place-items属性" class="headerlink" title="7, justify-items属性、align-items属性、place-items属性"></a>7, justify-items属性、align-items属性、place-items属性</h6><p><code>justify-items</code>属性设置单元格内容的水平位置（左中右），<code>align-items</code>属性设置单元格内容的垂直位置（上中下）。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
@@ -588,13 +595,15 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 &#125;</code></pre></div>
 
 <p>以上代码表示，单元格的内容左对齐，效果如下图。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032516.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516032125354.png" srcset="/img/loading.gif" alt="image-20210516032125354" style="zoom:50%;" />
+
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
   <span class="hljs-attribute">align-items</span>: start;
 &#125;</code></pre></div>
 
 <p>以上代码表示，单元格的内容头部对齐，效果如下图。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032517.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516032200156.png" srcset="/img/loading.gif" alt="image-20210516032200156" style="zoom:50%;" />
+
 <p><code>place-items</code>属性是<code>align-items</code>属性和<code>justify-items</code>属性的合并简写形式。</p>
 <div class="hljs"><pre><code class="hljs sqf">place-<span class="hljs-built_in">items</span>: &lt;align-<span class="hljs-built_in">items</span>&gt; &lt;justify-<span class="hljs-built_in">items</span>&gt;;</code></pre></div>
 
@@ -611,25 +620,26 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 <p>这两个属性的写法完全相同，都可以取下面这些值。（下面的图都以<code>justify-content</code>属性为例，<code>align-content</code>属性的图完全一样，只是将水平方向改成垂直方向。）</p>
 <div class="hljs"><pre><code class="hljs crmsh"><span class="hljs-literal">start</span> - 对齐容器的起始边框。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032519.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516035732997.png" srcset="/img/loading.gif" alt="image-20210516035732997" style="zoom:50%;" />
+
 <div class="hljs"><pre><code class="hljs ada"><span class="hljs-keyword">end</span> - 对齐容器的结束边框。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032518.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516035756702.png" srcset="/img/loading.gif" alt="image-20210516035756702"></p>
 <div class="hljs"><pre><code class="hljs maxima"><span class="hljs-built_in">center</span> - 容器内部居中。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032520.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516035819805.png" srcset="/img/loading.gif" alt="image-20210516035819805"></p>
 <div class="hljs"><pre><code class="hljs nginx"><span class="hljs-attribute">stretch</span> - 项目大小没有指定时，拉伸占据整个网格容器。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032521.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516035933415.png" srcset="/img/loading.gif" alt="image-20210516035933415"></p>
 <div class="hljs"><pre><code class="hljs applescript"><span class="hljs-literal">space</span>-<span class="hljs-keyword">around</span> - 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与容器边框的间隔大一倍。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032522.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516040034814.png" srcset="/img/loading.gif" alt="image-20210516040034814"></p>
 <div class="hljs"><pre><code class="hljs applescript"><span class="hljs-literal">space</span>-<span class="hljs-keyword">between</span> - 项目与项目的间隔相等，项目与容器边框之间没有间隔。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032523.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516040058889.png" srcset="/img/loading.gif" alt="image-20210516040058889"></p>
 <div class="hljs"><pre><code class="hljs applescript"><span class="hljs-literal">space</span>-evenly - 项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032524.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516040123690.png" srcset="/img/loading.gif" alt="image-20210516040123690"></p>
 <p><code>place-content</code>属性是<code>align-content</code>属性和<code>justify-content</code>属性的合并简写形式。</p>
 <div class="hljs"><pre><code class="hljs maxima">place-<span class="hljs-built_in">content</span>: &lt;align-<span class="hljs-built_in">content</span>&gt; &lt;justify-<span class="hljs-built_in">content</span>&gt;</code></pre></div>
 
@@ -638,7 +648,7 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 <p>如果省略第二个值，浏览器就会假定第二个值等于第一个值。</p>
 <h6 id="9-grid-auto-columns-属性，-grid-auto-rows-属性"><a href="#9-grid-auto-columns-属性，-grid-auto-rows-属性" class="headerlink" title="9, grid-auto-columns 属性， grid-auto-rows 属性"></a>9, grid-auto-columns 属性， grid-auto-rows 属性</h6><p>有时候，一些项目的指定位置，在现有网格的外部。比如网格只有3列，但是某一个项目指定在第5行。这时，浏览器会自动生成多余的网格，以便放置项目。</p>
 <p><code>grid-auto-columns</code>属性和<code>grid-auto-rows</code>属性用来设置，浏览器自动创建的多余网格的列宽和行高。它们的写法与<code>grid-template-columns</code>和<code>grid-template-rows</code>完全相同。如果不指定这两个属性，浏览器完全根据单元格内容的大小，决定新增网格的列宽和行高。</p>
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/sayuric/edit?css,output">下面的例子</a>里面，划分好的网格是3行 x 3列，但是，8号项目指定在第4行，9号项目指定在第5行。</p>
+<p>下面的例子，划分好的网格是3行 x 3列，但是，8号项目指定在第4行，9号项目指定在第5行。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;
   <span class="hljs-attribute">display</span>: grid;
   <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;
@@ -647,7 +657,7 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
 &#125;</code></pre></div>
 
 <p>上面代码指定新增的行高统一为50px（原始的行高为100px）。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032525.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516040530981.png" srcset="/img/loading.gif" alt="image-20210516040530981"></p>
 <h6 id="10-grid-template-属性，-grid-属性"><a href="#10-grid-template-属性，-grid-属性" class="headerlink" title="10, grid-template 属性， grid 属性"></a>10, grid-template 属性， grid 属性</h6><p><code>grid-template</code>属性是<code>grid-template-columns</code>、<code>grid-template-rows</code>和<code>grid-template-areas</code>这三个属性的合并简写形式。</p>
 <p><code>grid</code>属性是<code>grid-template-rows</code>、<code>grid-template-columns</code>、<code>grid-template-areas</code>、 <code>grid-auto-rows</code>、<code>grid-auto-columns</code>、<code>grid-auto-flow</code>这六个属性的合并简写形式。</p>
 <p>从易读易写的角度考虑，还是建议不要合并属性，所以这里就不详细介绍这两个属性了。</p>
@@ -663,11 +673,10 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
   <span class="hljs-attribute">grid-column-end</span>: <span class="hljs-number">4</span>;
 &#125;</code></pre></div>
 
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/yukobuf/edit?css,output">上面代码</a>指定，1号项目的左边框是第二根垂直网格线，右边框是第四根垂直网格线。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032526.png" srcset="/img/loading.gif" alt="img"></p>
+<p>以上代码指定，1号项目的左边框是第二根垂直网格线，右边框是第四根垂直网格线。</p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516040738881.png" srcset="/img/loading.gif" alt="image-20210516040738881"></p>
 <p>上图中，只指定了1号项目的左右边框，没有指定上下边框，所以会采用默认位置，即上边框是第一根水平网格线，下边框是第二根水平网格线。</p>
 <p>除了1号项目以外，其他项目都没有指定位置，由浏览器自动布局，这时它们的位置由容器的<code>grid-auto-flow</code>属性决定，这个属性的默认值是<code>row</code>，因此会”先行后列”进行排列。读者可以把这个属性的值分别改成<code>column</code>、<code>row dense</code>和<code>column dense</code>，看看其他项目的位置发生了怎样的变化。</p>
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/nagobey/edit?html,css,output">下面的例子</a>是指定四个边框位置的效果。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item-1</span> &#123;
   <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">1</span>;
   <span class="hljs-attribute">grid-column-end</span>: <span class="hljs-number">3</span>;
@@ -675,7 +684,7 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
   <span class="hljs-attribute">grid-row-end</span>: <span class="hljs-number">4</span>;
 &#125;</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032527.png" srcset="/img/loading.gif" alt="img"></p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516040941534.png" srcset="/img/loading.gif" alt="image-20210516040941534"></p>
 <p>这四个属性的值，除了指定为第几个网格线，还可以指定为网格线的名字。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item-1</span> &#123;
   <span class="hljs-attribute">grid-column-start</span>: header-start;
@@ -688,9 +697,9 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
   <span class="hljs-attribute">grid-column-start</span>: span <span class="hljs-number">2</span>;
 &#125;</code></pre></div>
 
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/hehumay/edit?html,css,output">上面代码</a>表示，1号项目的左边框距离右边框跨越2个网格。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032528.png" srcset="/img/loading.gif" alt="img"></p>
-<p>这与<a target="_blank" rel="noopener" href="https://jsbin.com/mujihib/edit?html,css,output">下面的代码</a>效果完全一样。</p>
+<p>以上代码，1号项目的左边框距离右边框跨越2个网格。</p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516041342929.png" srcset="/img/loading.gif" alt="image-20210516041342929"></p>
+<p>这与下面的效果完全一样。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item-1</span> &#123;
   <span class="hljs-attribute">grid-column-end</span>: span <span class="hljs-number">2</span>;
 &#125;</code></pre></div>
@@ -729,33 +738,44 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
   <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / span <span class="hljs-number">2</span>;
 &#125;</code></pre></div>
 
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/volugow/edit?html,css,output">上面代码</a>中，项目<code>item-1</code>占据的区域，包括第一行 + 第二行、第一列 + 第二列。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032529.png" srcset="/img/loading.gif" alt="img"></p>
+<p>以上代码，项目<code>item-1</code>占据的区域，包括第一行 + 第二行、第一列 + 第二列。</p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516041741041.png" srcset="/img/loading.gif" alt="image-20210516041741041"></p>
 <p>斜杠以及后面的部分可以省略，默认跨越一个网格。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item-1</span> &#123;
   <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span>;
   <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span>;
 &#125;</code></pre></div>
 
-<p>上面代码中，项目<code>item-1</code>占据左上角第一个网格。</p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516041814053.png" srcset="/img/loading.gif" alt="image-20210516041814053"></p>
 <h6 id="3-grid-area-属性"><a href="#3-grid-area-属性" class="headerlink" title="3, grid-area 属性"></a>3, grid-area 属性</h6><p><code>grid-area</code>属性指定项目放在哪一个区域。</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item-1</span> &#123;
-  <span class="hljs-attribute">grid-area</span>: e;
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.wrap</span> &#123;
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">grid-auto-rows</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">253</span>, <span class="hljs-number">238</span>, <span class="hljs-number">245</span>);
+  <span class="hljs-attribute">grid-template-areas</span>: <span class="hljs-string">&#x27;a b c&#x27;</span> <span class="hljs-string">&#x27;d wangyaru f&#x27;</span> <span class="hljs-string">&#x27;g h i&#x27;</span>;
+&#125;
+
+<span class="hljs-selector-class">.item-1</span> &#123;
+	<span class="hljs-attribute">grid-area</span>: wangyaru
 &#125;</code></pre></div>
 
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/qokexob/edit?css,output">上面代码</a>中，1号项目位于<code>e</code>区域，效果如下图。</p>
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032530.png" srcset="/img/loading.gif" alt="img"></p>
+<p>以上代码，1号项目位于wangyaru区域:</p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516042051972.png" srcset="/img/loading.gif" alt="image-20210516042051972"></p>
 <p><code>grid-area</code>属性还可用作<code>grid-row-start</code>、<code>grid-column-start</code>、<code>grid-row-end</code>、<code>grid-column-end</code>的合并简写形式，直接指定项目的位置。</p>
 <div class="hljs"><pre><code class="hljs pgsql">.item &#123;
   grid-area: &lt;<span class="hljs-keyword">row</span>-<span class="hljs-keyword">start</span>&gt; / &lt;<span class="hljs-keyword">column</span>-<span class="hljs-keyword">start</span>&gt; / &lt;<span class="hljs-keyword">row</span>-<span class="hljs-keyword">end</span>&gt; / &lt;<span class="hljs-keyword">column</span>-<span class="hljs-keyword">end</span>&gt;;
 &#125;
 </code></pre></div>
 
-<p>下面是一个<a target="_blank" rel="noopener" href="https://jsbin.com/duyafez/edit?css,output">例子</a>。</p>
+
+
 <div class="hljs"><pre><code class="hljs angelscript">.item<span class="hljs-number">-1</span> &#123;
   grid-area: <span class="hljs-number">1</span> / <span class="hljs-number">1</span> / <span class="hljs-number">3</span> / <span class="hljs-number">3</span>;
 &#125;</code></pre></div>
 
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516042156852.png" srcset="/img/loading.gif" alt="image-20210516042156852"></p>
 <h5 id="4-justify-self-属性，-align-self-属性，-place-self-属性"><a href="#4-justify-self-属性，-align-self-属性，-place-self-属性" class="headerlink" title="4,justify-self 属性， align-self 属性， place-self 属性"></a>4,justify-self 属性， align-self 属性， place-self 属性</h5><p><code>justify-self</code>属性设置单元格内容的水平位置（左中右），跟<code>justify-items</code>属性的用法完全一致，但只作用于单个项目。</p>
 <p><code>align-self</code>属性设置单元格内容的垂直位置（上中下），跟<code>align-items</code>属性的用法完全一致，也是只作用于单个项目。</p>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
@@ -775,7 +795,8 @@ obj.say() <span class="hljs-comment">// obj</span></code></pre></div>
   <span class="hljs-attribute">justify-self</span>: start;
 &#125;</code></pre></div>
 
-<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/bg2019032532.png" srcset="/img/loading.gif" alt="img"></p>
+<img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/image-20210516042255343.png" srcset="/img/loading.gif" alt="image-20210516042255343" style="zoom: 50%;" />
+
 <p><code>place-self</code>属性是<code>align-self</code>属性和<code>justify-self</code>属性的合并简写形式。</p>
 <blockquote>
 <div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">place-self</span>: &lt;<span class="hljs-selector-tag">align-self</span>&gt; &lt;<span class="hljs-selector-tag">justify-self</span>&gt;;</code></pre></div>
