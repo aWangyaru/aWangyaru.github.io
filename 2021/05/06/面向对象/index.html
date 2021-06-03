@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avater.jpeg">
+  <link rel="icon" type="image/png" href="/img/avater.jpeg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="wangyaru">
+  <meta name="keywords" content="">
+  <title>面向对象 - Wangyaru的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/foundation.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Wangyaru</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/article.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2021-05-06 20:12" pubdate>
+      2021年5月6日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      40
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-lg-8 nopadding-md">
+                <div class="container nopadding-md" id="board-ctn">
+                    <div class="py-5" id="board">
+                        <article class="post-content mx-auto" id="post">
+                            <!-- SEO header -->
+                            <h1 style="display: none">
+                                面向对象
+                            </h1>
+                            
+                                    <div class="markdown-body" id="post-body">
+                                        <p>面向对象(Object-Oriented, OO)的语言的标志就是他们都有类的概念。通过类可以创建任意多个具有相同属性和方法的对象。</p>
+<h5 id="理解对象"><a href="#理解对象" class="headerlink" title="理解对象"></a>理解对象</h5><p>早期的开发人员创建自定义对象最简单的方式就是创建一个Object的实例，然后再为他添加属性和方法：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()
+person.name = <span class="hljs-string">&#x27;张三&#x27;</span>
+person.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name)
+&#125;</code></pre></div>
+<p>几年后，创建对象最简单的方式是对象字面量：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = &#123;
+  name: <span class="hljs-string">&#x27;张三&#x27;</span>,
+  sayName:<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name)
+  &#125;
+&#125;</code></pre></div>
+<h4 id="属性类型"><a href="#属性类型" class="headerlink" title="属性类型"></a>属性类型</h4><p>ESMAScript有两种属性：数据属性、访问器属性</p>
+<blockquote>
+<p>1，数据属性<br>数据属性有4个描述其行为的特性：</p>
+</blockquote>
+<ul>
+<li>[[configurable]]：表示是否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性</li>
+<li>[[enumberable]]:表示能否通过for..in循环返回属性</li>
+<li>[[writeable]]: 表示能否修改属性的值</li>
+<li>[[value]]: 包括这个属性的数据值，读取属性值的时候，从这个位置读，写入属性值的时候，把新值保存在这个位置</li>
+</ul>
+<p>要修改属性默认的特性，必须使用Object.defineProperty()方法，这个方法接受3个参数：属性所在的对象、属性的名字、描述符对象。其中描述符对象的属性必须是：configurable、enumberable、writeable、value</p>
+<p>通过Object.defineProperty()创建一个新的属性的时候，如果configurable、enumberable、writeable这三个参数不指定，默认值都是false</p>
+<div class="hljs"><pre><code class="hljs pgsql">var person = &#123;&#125;
+<span class="hljs-keyword">Object</span>.defineProperty(person, <span class="hljs-string">&#x27;name&#x27;</span>, &#123;
+    writable: <span class="hljs-keyword">false</span>,
+    <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;张三&#x27;</span>
+&#125;)
+console.log(person.name)  // 张三
+person.name = <span class="hljs-string">&#x27;李四&#x27;</span>
+console.log(person.name)  // 张三</code></pre></div>
+<p>以上代码，创建了一个名为name的属性，他的值”张三”是只读的。</p>
+<div class="hljs"><pre><code class="hljs pgsql">var person = &#123;&#125;
+<span class="hljs-keyword">Object</span>.defineProperty(person, <span class="hljs-string">&#x27;name&#x27;</span>, &#123;
+    configurable: <span class="hljs-keyword">true</span>,
+    <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;张三&#x27;</span>
+&#125;)
+console.log(person.name)  // 张三
+<span class="hljs-keyword">delete</span> person.name
+console.log(person.name)  // undefined</code></pre></div>
+<p>以上代码，把configurable设为false, 表示不能从对象中删除属性。</p>
+<blockquote>
+<p>2, 访问器属性</p>
+</blockquote>
+<p>访问器属性不包含数据值。包含一对getter和setter函数；</p>
+<p>getter: 在读取访问器属性的时候，会调用getter函数，这个函数负责返回有效的值。</p>
+<p>setter: 在写入访问器属性的时候，会调用setter函数并传入新值，这个函数负责决定如何处理数据</p>
+<p>访问器属性有以下4个特性：</p>
+<ul>
+<li><p>[[configurable]]: 表示能否删除属性从而重新定义属性</p>
+</li>
+<li><p>[[enumerable]]: 表示能否通过for..in循环返回属性</p>
+</li>
+<li><p>[[Get]]: 在读取属性时调用的函数，默认值是undefined</p>
+</li>
+<li><p>[[Set]]: 在写入属性时调用的函数，默认值是undefined<br>访问器属性不能直接定义，必须使用Object.defineProperty()定义：</p>
+<div class="hljs"><pre><code class="hljs haxe">const book = &#123;
+  _year: <span class="hljs-type">2020</span>,
+  edition: <span class="hljs-type">1</span>
+<span class="hljs-type"></span>&#125;
+Object.defineProperty(book, <span class="hljs-string">&#x27;year&#x27;</span>, &#123;
+  <span class="hljs-keyword">get</span>: <span class="hljs-type">function</span>() &#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>._year
+  &#125;,
+  <span class="hljs-keyword">set</span>: <span class="hljs-type">function</span>(<span class="hljs-keyword">new</span><span class="hljs-type">Val</span>) &#123;
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span><span class="hljs-type">Val</span> &gt; <span class="hljs-number">2020</span>) &#123;
+          <span class="hljs-built_in">this</span>._year = <span class="hljs-keyword">new</span><span class="hljs-type">Val</span>
+<span class="hljs-type"></span>          <span class="hljs-built_in">this</span>.edition += <span class="hljs-keyword">new</span><span class="hljs-type">Val</span> - <span class="hljs-number">2020</span>
+      &#125;
+  &#125;
+&#125;)
+book.year = <span class="hljs-number">2023</span>
+console.log(book.edition)  <span class="hljs-comment">// 4</span></code></pre></div>
+<p>以上代码创建了一个book对象，并给定两个默认属性：_year、edition，_year前面的下划线是一种常用的记号，用于表示只能通过对象方法访问的属性。</p>
+<h4 id="定义多个属性"><a href="#定义多个属性" class="headerlink" title="定义多个属性"></a>定义多个属性</h4><p>因为对象定义多个属性的可能性很大，ECMAScript又定义了一个Object.defineProperties()方法，可以通过描述符一次定义多个属性。这个方法接受两个对象参数：第一个对象是要添加和修改其属性的对象，第二个对象的属性与第一个对象中要调价或修改的属性–对应：</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-string">const</span> <span class="hljs-string">book</span> <span class="hljs-string">=</span> &#123;&#125;
+<span class="hljs-string">Object.defineProperties(book,</span> &#123;
+    <span class="hljs-attr">_year:</span> &#123;
+        <span class="hljs-attr">writable:</span> <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">value:</span> <span class="hljs-number">2020</span>
+    &#125;,
+    <span class="hljs-attr">edition:</span> &#123;
+        <span class="hljs-attr">writable:</span> <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">value:</span> <span class="hljs-number">1</span>
+    &#125;,
+    <span class="hljs-attr">year:</span> &#123;
+        <span class="hljs-attr">get:</span> <span class="hljs-string">function()</span> &#123;
+            <span class="hljs-string">return</span> <span class="hljs-string">this._year</span>
+        &#125;,
+        <span class="hljs-attr">set:</span> <span class="hljs-string">function(newVal)</span> &#123;
+            <span class="hljs-string">if</span> <span class="hljs-string">(newVal</span> <span class="hljs-string">&gt;</span> <span class="hljs-number">2020</span><span class="hljs-string">)</span> &#123;
+                <span class="hljs-string">this._year</span> <span class="hljs-string">=</span> <span class="hljs-string">newVal</span>
+                <span class="hljs-string">this.edition</span> <span class="hljs-string">+=</span> <span class="hljs-string">newVal</span> <span class="hljs-bullet">-</span> <span class="hljs-number">2020</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;<span class="hljs-string">)</span>
+<span class="hljs-string">book.year</span> <span class="hljs-string">=</span> <span class="hljs-number">2028</span>
+<span class="hljs-string">console.log(book.edition)</span>  <span class="hljs-string">//</span> <span class="hljs-number">9</span></code></pre></div>
+<p>以上代码book对象上定义了两个数据属性: _year、edition，和一个访问器属性: year，最终的对象和上面定义的对象相同，唯一的区别是这里的属性都是在同一时间创建的。</p>
+<h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><p>通过Object构造函数和对象字面量都可以创建对象，但是这些方式有个明显的缺点：使用同一个接口创建很多对象，会产生大量的重复代码，为解决这个问题，人们开始使用工厂模式的一种变体。</p>
+<h5 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h5><p>工厂模式是软件工程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程，考虑到在ECMAScript中无法创建类，开发人员发明了一种函数，用函数来封装以特定接口创建对象的细节：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPerson</span>(<span class="hljs-params">name, age, job</span>) </span>&#123;
+  <span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()
+  o.name = name
+  o.age = age
+  o.job = job
+  o.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name)
+  &#125;
+  <span class="hljs-keyword">return</span> o
+&#125;
+<span class="hljs-keyword">const</span> p1 = createPerson(<span class="hljs-string">&#x27;张三&#x27;</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&#x27;engineer&#x27;</span>)
+<span class="hljs-keyword">const</span> p2 = createPerson(<span class="hljs-string">&#x27;李四&#x27;</span>, <span class="hljs-number">19</span>, <span class="hljs-string">&#x27;Doctor&#x27;</span>)
+<span class="hljs-built_in">console</span>.log(p1) <span class="hljs-comment">// &#123;name: &#x27;张三&#x27;, age: 18, job: &#x27;engineer&#x27;, sayName: : f() &#123;&#125;&#125;</span>
+<span class="hljs-built_in">console</span>.log(p2) <span class="hljs-comment">// &#123;name: &#x27;李四&#x27;, age: 19, job: &#x27;Doctor&#x27;, sayName: : f() &#123;&#125;&#125;</span></code></pre></div>
+<p>函数createPerson()能够根据接受的参数来构建一个包含所有必要信息的Person对象，可以无数次的调用这个函数，每次调用都会返回一个包含三个属性一个方法的对象。工厂模式虽然解决了创建多个相似对象的问题，但却没有解决对象识别的问题(即怎么知道一个对象的类型)，随着JavaScript的发展，又一个新模式出现了： 构造函数模式</p>
+<h5 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h5><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age, job</span>) </span>&#123;
+  <span class="hljs-built_in">this</span>.name = name
+  <span class="hljs-built_in">this</span>.age = age
+  <span class="hljs-built_in">this</span>.job = job
+  <span class="hljs-built_in">this</span>.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name)
+  &#125;
+&#125;
+<span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;张三&#x27;</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&#x27;engineer&#x27;</span>)
+<span class="hljs-keyword">const</span> p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;李四&#x27;</span>, <span class="hljs-number">19</span>, <span class="hljs-string">&#x27;Doctor&#x27;</span>)
+<span class="hljs-built_in">console</span>.log(p1) <span class="hljs-comment">// &#123;name: &#x27;张三&#x27;, age: 18, job: &#x27;engineer&#x27;, sayName: : f() &#123;&#125;&#125;</span>
+<span class="hljs-built_in">console</span>.log(p2) <span class="hljs-comment">// &#123;name: &#x27;李四&#x27;, age: 19, job: &#x27;Doctor&#x27;, sayName: : f() &#123;&#125;&#125;</span></code></pre></div>
+<p>Person()函数取代了工厂模式的createPerson()函数。Person()与createPerson()的区别：</p>
+</li>
+<li><p>没有显式的创建对象</p>
+</li>
+<li><p>直接将属性和方法赋值给了this对象</p>
+</li>
+<li><p>没有return语句<br>要创建Person的新实例，必须使用new操作符。以这种方式调用构造函数实际上会经历以下4个步骤：</p>
+</li>
+<li><p>1，创建一个新对象</p>
+</li>
+<li><p>2，将构造函数的作用域赋值给新对象（因此this就指向了这个新对象）</p>
+</li>
+<li><p>3，执行构造函数中的方法（为这个新对象添加属性）</p>
+</li>
+<li><p>4，返回新对象<br>以上例子p1和p2分别保存着Person的一个不同的实例。这两个对象都有一个constructor属性，该属性指向Person</p>
+<div class="hljs"><pre><code class="hljs ini"><span class="hljs-attr">p1.constructor</span> == Person // <span class="hljs-literal">true</span>
+<span class="hljs-attr">p2.constructor</span> == Person // <span class="hljs-literal">true</span></code></pre></div>
+<p>对象的constructor属性起初是用来标识对象类型的。但是提到检测对象类型，还是instanceof操作符更可靠一些。我们在这个例子中创建的所有对象既是Object的实例，又是Person的实例，这一点可以通过instanceof检测：</p>
+<div class="hljs"><pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.log(p1 <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>)  <span class="hljs-regexp">//</span> <span class="hljs-literal">true</span>
+<span class="hljs-built_in">console</span>.log(p2 <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>)  <span class="hljs-regexp">//</span> <span class="hljs-literal">true</span>
+<span class="hljs-built_in">console</span>.log(p1 <span class="hljs-keyword">instanceof</span> Person)  <span class="hljs-regexp">//</span> <span class="hljs-literal">true</span>
+<span class="hljs-built_in">console</span>.log(p1 <span class="hljs-keyword">instanceof</span> Person)  <span class="hljs-regexp">//</span> <span class="hljs-literal">true</span></code></pre></div>
+<p>p1、p2之所以同时是Object的实例，是因为所有对象均继承Object。</p>
+</li>
+</ul>
+<h5 id="将构造函数当作函数"><a href="#将构造函数当作函数" class="headerlink" title="将构造函数当作函数"></a>将构造函数当作函数</h5><p>构造函数和普通函数的唯一区别在于调用他们的方式不同</p>
+<p>前面的例子定义的Person()函数可以通过下面任意一种方式调用：</p>
+<div class="hljs"><pre><code class="hljs dart"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;张三&#x27;</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&#x27;engineer&#x27;</span>)
+p1.sayName()  <span class="hljs-comment">// 张三</span>
+
+Person(<span class="hljs-string">&#x27;李四&#x27;</span>, <span class="hljs-number">20</span>, <span class="hljs-string">&#x27;Doctor&#x27;</span>)
+<span class="hljs-built_in">window</span>.sayName()  <span class="hljs-comment">// 李四</span>
+
+<span class="hljs-keyword">const</span> o = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()
+Person.call(o, <span class="hljs-string">&#x27;小王&#x27;</span>, <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;Nurse&#x27;</span>)
+o.sayName()  <span class="hljs-comment">// 小王</span></code></pre></div>
+<p>以上代码，前两行展示了构造函数的典型用法，即使用new操作符来创建一个新对象。楼下两行代码展示了不使用new操作符调用Person()会出现什么结果： 属性和方法被添加给window对象了, 当在全局作用域中调用一个函数时，this对象总是指向Global对象(在浏览器中就是window对象)。最后两行代码使用call()在某个特殊对象的作用域中调用Person()函数，这里是在对象o的作用域中调用的。</p>
+<h5 id="构造函数的问题"><a href="#构造函数的问题" class="headerlink" title="构造函数的问题"></a>构造函数的问题</h5><p>构造函数虽然好用，但也并非没有缺点，使用构造函数的主要问题就是每个方法都要在每个实例上重新创建一遍，在前面的例子中,p1、p2都有一个名为sayName()的方法，但这两个方法不是同一个Function的实例，ECMAScript中的函数是对象，因此每定义一个函数也就是实例化了一个对象，从逻辑角度讲，此时的构造函数也可以这样定义：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age</span>) </span>&#123;
+  <span class="hljs-built_in">this</span>.name = name
+  <span class="hljs-built_in">this</span>.age = age
+  <span class="hljs-built_in">this</span>.sayName = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name))
+&#125;
+<span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;张三&#x27;</span>, <span class="hljs-number">18</span>)  <span class="hljs-comment">// 张三</span></code></pre></div>
+<p>以上代码更容易明白每个Person实例都包含一个不同的Function实例的本质。不同实例上的同名函数是不相等的以下代码可以证明：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age</span>) </span>&#123;
+  <span class="hljs-built_in">this</span>.name = name
+  <span class="hljs-built_in">this</span>.age = age
+  <span class="hljs-built_in">this</span>.sayName = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name))
+&#125;
+<span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;张三&#x27;</span>, <span class="hljs-number">18</span>)
+<span class="hljs-keyword">let</span> p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;李四&#x27;</span>, <span class="hljs-number">18</span>)
+<span class="hljs-built_in">console</span>.log(p1.sayName == p2.sayName)  <span class="hljs-comment">// false</span></code></pre></div>
+<p>创建两个完成同样任务的Function实例的确没有必要，况且有this对象在，根本不用在执行代码前就把函数绑定到特定对象上面。因此，大可像下面这样，通过把函数定义转移到构造函数外部来解决这个问题：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age</span>) </span>&#123;
+  <span class="hljs-built_in">this</span>.name = name
+  <span class="hljs-built_in">this</span>.age = age
+  <span class="hljs-built_in">this</span>.sayName = sayName
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayName</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name)
+&#125;
+<span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;张三&#x27;</span>, <span class="hljs-number">18</span>)
+<span class="hljs-keyword">let</span> p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;李四&#x27;</span>, <span class="hljs-number">18</span>)
+<span class="hljs-built_in">console</span>.log(p1.sayName())  <span class="hljs-comment">// 张三</span>
+<span class="hljs-built_in">console</span>.log(p2.sayName())  <span class="hljs-comment">// 李四</span></code></pre></div>
+<p>以上代码，sayName()函数的定义转移到了构造函数外。在构造函数内，我们将sayName属性设置成等于全局的sayName函数，这样，由于sayName包含的是一个指向函数的指针，因此p1和p2对象就共享了在全局作用域中定义的同一个sayName()函数，这样做确实解决了两个函数做同一件事的问题，但是新的问题来了，在全局作用域中定义的函数实际上只能被某个对象调用，这让全局作用域有点名不副实。更让人无法接受的是，如果对象需要定义很多方法，那么就要定义很多全局函数，于是我们这个自定义的引用类型就丝毫没有封装性可言了，好在这些问题可以通过使用原型模式来解决</p>
+<h5 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h5><p>每一个函数都有一个prototype属性，这个属性是一个指针，指向一个对象。而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。如果按照字面意思来理解，那么prototype就是通过调用构造函数而创建的那个对象实例的原型对象。使用对象的好处是可以让所有对象实例共享他包含的属性和方法，换句话说，不必在构造函数中定义对象实例的信息，而是可以将这些信息直接添加到原型对象中，如下面的例子</p>
+<div class="hljs"><pre><code class="hljs reasonml"><span class="hljs-keyword">function</span> <span class="hljs-constructor">Person()</span> &#123;&#125;
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Person</span>.</span></span>prototype.name = &#x27;张三&#x27;
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Person</span>.</span></span>prototype.age = <span class="hljs-number">18</span>
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Person</span>.</span></span>prototype.sayName = <span class="hljs-keyword">function</span><span class="hljs-literal">()</span> &#123;
+    console.log(this.name)
+&#125;
+<span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Person()</span>
+p1.say<span class="hljs-constructor">Name()</span>
+<span class="hljs-keyword">let</span> p2 = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Person()</span>
+p2.say<span class="hljs-constructor">Name()</span>
+console.log(p1.sayName<span class="hljs-operator"> == </span>p2.sayName)  <span class="hljs-comment">// true</span></code></pre></div>
+<p>以上代码就是原型模式，和构造函数模式不用的是，新对象的这些属性和方法是由所有实例共享的。换句话说，p1和p2访问的都是同一组属性和同一个方法。</p>
+<h6 id="理解原型对象"><a href="#理解原型对象" class="headerlink" title="理解原型对象"></a>理解原型对象</h6><p>只要创建一个函数，就会根据特定的规则为该函数创建一个prototype属性，这个属性指向函数的原型对象。默认情况下，所有原型对象都会自动获得一个constructor属性，这个属性是一个指向prototype属性所在函数的指针。以上例子，Person.prototype.constructor指向Person,通过这个构造函数我们可以继续为原型对象添加其他属性和方法。</p>
+<p>创建了自定义的构造函数后，其原型对象默认只会取得constructor属性，至于其他方法，则都是从Object继承来的。当调用构造函数创建一个新实例后，该实例的内部将包含一个指针，指向构造函数的原型对象。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承是OO语言中最为人津津乐道的概念。许多OO语言都支持两种继承方式：接口继承和实现继承实现继承。</p>
+<p>接口继承只继承方法签名，而实现继承则继承实际的方法。由于函数没有签名，在ECMAScript中无法实现接口继承。ECMAScript只支持实现继承。而且实现继承主要是依靠原型链来实现的。</p>
+<h5 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h5><p>原型链是实现继承的主要方法。其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。</p>
+<p>简单回顾一下，构造函数、原型和实例的关系：每个构造函数都有一个原型对象</p>
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="post-metas mb-3">
+                                            
+                                                <div class="post-meta mr-3">
+                                                    <i class="iconfont icon-category"></i>
+                                                    
+                                                        <a class="hover-with-bg" href="/categories/JavaScript/">
+                                                            JavaScript
+                                                        </a>
+                                                        
+                                                </div>
+                                                
+                                                    
+                                                        <div class="post-meta">
+                                                            <i class="iconfont icon-tags"></i>
+                                                            
+                                                                <a class="hover-with-bg" href="/tags/JavaScript/">
+                                                                    JavaScript
+                                                                </a>
+                                                                
+                                                        </div>
+                                                        
+                                        </div>
+                                        
+                                                
+                                                    <div class="post-prevnext row">
+                                                        <article class="post-prev col-6">
+                                                            
+                                                                
+                                                                    <a href="/2021/05/09/Vue/">
+                                                                        <i class="iconfont icon-arrowleft"></i>
+                                                                        <span class="hidden-mobile">Vue常见面试题</span>
+                                                                        <span class="visible-mobile">上一篇</span>
+                                                                    </a>
+                                                                    
+                                                        </article>
+                                                        <article class="post-next col-6">
+                                                            
+                                                                
+                                                        </article>
+                                                    </div>
+                                                    
+                                    </div>
+
+                                    
+                                        <!-- Comments -->
+                                        <article class="comments" id="comments">
+                                            
+                                                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "hjxsDRXYScicliqD8I8JqoTu-gzGzoHsz",
+          app_key: "qUcAEReEqeEVp5wwXJ41uCCp",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+                                        </article>
+                                        
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+                    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+                </div>
+                
+        </div>
+    </div>
+
+    <!-- Custom -->
+    
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+    <div class="text-center py-3">
+
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    
+      <script  src="/js/lazyload.js" ></script>
+    
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "面向对象&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "always",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>

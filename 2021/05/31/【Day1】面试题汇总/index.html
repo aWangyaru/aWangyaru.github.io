@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="wangyaru">
   <meta name="keywords" content="">
-  <title>微信小程序支付相关 - Wangyaru的博客</title>
+  <title>公司真题1 - Wangyaru的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -160,8 +160,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2021-05-24 21:27" pubdate>
-      2021年5月24日 晚上
+    <time datetime="2021-05-31 09:26" pubdate>
+      2021年5月31日 上午
     </time>
   </div>
 
@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      240 字
+      817 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      10
        分钟
     </span>
   
@@ -212,28 +212,79 @@
                         <article class="post-content mx-auto" id="post">
                             <!-- SEO header -->
                             <h1 style="display: none">
-                                微信小程序支付相关
+                                公司真题1
                             </h1>
                             
                                     <div class="markdown-body" id="post-body">
-                                        <p>准备工作：</p>
-<div class="hljs"><pre><code class="hljs angelscript"><span class="hljs-number">1</span>,微信公众平台的账号即微信公众账号，必须是企业认证过的，个人是不能申请微信支付的
-<span class="hljs-number">2</span>，微信商户平台，需要一个商户平台账号，申请商户平台和微信公众账号的企业必须是同一个企业主体信息
-<span class="hljs-number">3</span>，支付宝商户平台，需要一个支付宝商户平台账号，需要企业的营业执照
-<span class="hljs-number">4</span>，备案过的域名，需要一个已经在工信部备案通过的域名
-<span class="hljs-number">5</span>，服务器，需要一个具有外网ip的服务器</code></pre></div>
+                                        <h5 id="1-声明-docType-的作用？"><a href="#1-声明-docType-的作用？" class="headerlink" title="1,  声明 docType 的作用？"></a>1,  声明 docType 的作用？</h5><p>doctype是document.type的缩写（文档类型），声明文档的解析类型，避免浏览器的怪异模式。</p>
+<p>浏览器解析CSS有两种模式：标准模式、怪异模式</p>
+<p>标准模式：浏览器按W3C标准解析执行代码</p>
+<p>怪异模式：使用浏览器自己的方式解析执行代码，因为不同浏览器的解析执行不一样，所以称为怪异模式。</p>
+<h6 id="两者区别："><a href="#两者区别：" class="headerlink" title="两者区别："></a>两者区别：</h6><p>1，盒模型: css盒模型本质上就是一个盒子，它包括：外边距(margin)、边框(border)、内边距(padding)、实际内容(content)四个属性。</p>
+<p>W3C盒模型(标准盒模型)：</p>
+<img src="../images/%E5%85%AC%E5%8F%B8%E7%9C%9F%E9%A2%981/image-20210602172758457.png" srcset="/img/loading.gif" alt="image-20210602172758457" style="zoom:50%;" />
 
-<p>微信接口对接</p>
-<div class="hljs"><pre><code class="hljs angelscript"><span class="hljs-number">1</span>，微信开发服务器验证
-<span class="hljs-number">2</span>，微信登录授权获取openid
-<span class="hljs-number">3</span>，微信jsapi签名认证
-<span class="hljs-number">4</span>，微信支付接口签名
-<span class="hljs-number">5</span>，公众账号调用支付api</code></pre></div>
+<p>怪异盒模型(IE盒模型)：</p>
+<img src="../images/%E5%85%AC%E5%8F%B8%E7%9C%9F%E9%A2%981/image-20210602172850162.png" srcset="/img/loading.gif" alt="image-20210602172850162" style="zoom:50%;" />
 
-<p>支付宝接口对接</p>
-<div class="hljs"><pre><code class="hljs plain">支付宝证书生成
-支付宝服务器SDK对接
-页面效果实现</code></pre></div>
+<h6 id="标准模型和IE模型的区别"><a href="#标准模型和IE模型的区别" class="headerlink" title="标准模型和IE模型的区别"></a>标准模型和IE模型的区别</h6><p>标准盒模型：盒子总宽度/高度 = <code>width/height + padding + border + margin</code>。（ 即 width/height 只是内容高度，不包含 padding 和 border 值 ）</p>
+<p>IE盒子模型：盒子总宽度/高度 = <code>width/height + margin = (内容区宽度/高度 + padding + border) + margin</code>。（ 即 width/height 包含了 padding 和 border 值 ）</p>
+<h6 id="css-如何设置这两种模式"><a href="#css-如何设置这两种模式" class="headerlink" title="css 如何设置这两种模式"></a>css 如何设置这两种模式</h6><p>标准：<code>box-sizing: content-box;</code> ( 浏览器默认设置 )<br>IE： <code>box-sizing: border-box;</code></p>
+<h5 id="2，position-属性及其作用"><a href="#2，position-属性及其作用" class="headerlink" title="2，position 属性及其作用"></a>2，position 属性及其作用</h5><p>常见的属性：relative、absolute、fixed、static</p>
+<p>1, static 默认值，始终处于页面流基于的位置</p>
+<p>2，relative 相对定位 ，如果设置了relative，那么他的偏移的top/bottom/left/right的值都是以他原来的位置为基准偏移。relative移动后的元素在原来的位置扔占据空间</p>
+<p>3，absolute 绝对定位，如果他的父容器设置了position属性，且值为 relative 或者 absolute，那么就会依据父容器进行偏移。如果父元素/父父元素…没有设置position属性，那么偏移就是依body为依据。absolute的元素在标准流中不占位置</p>
+<p>4, fixed 固定定位，相对于浏览器窗口的指定坐标，不论窗口滚动与否，元素都会留在那个位置，始终以 body 为依据，</p>
+<h5 id="3，for…of、for…in区别"><a href="#3，for…of、for…in区别" class="headerlink" title="3，for…of、for…in区别"></a>3，for…of、for…in区别</h5><p>For..in是ES5标准，遍历的是Key，可遍历对象、数组或字符串的key。</p>
+<p>for-of是ES6标准，遍历的是value，可遍历数组或字符串的value。</p>
+<p>for-in会遍历数组所有的可枚举属性，包括原型。原型方法method和name属性都会被遍历出来，通常需要配合hasOwnProperty()方法判断某个属性是否该对象的实例属性，来将原型对象从循环中剔除。</p>
+<div class="hljs"><pre><code class="hljs maxima"><span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> <span class="hljs-built_in">key</span> <span class="hljs-keyword">in</span> myObject) &#123;
+　　<span class="hljs-keyword">if</span>（myObject.hasOwnProperty(<span class="hljs-built_in">key</span>))&#123;
+　　　　console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">key</span>);
+　　&#125;
+&#125;</code></pre></div>
+
+<p>for in循环遍历的是数组的键值(索引)，而for of循环遍历的是数组的值。</p>
+<p>1, 区别1 - for..of无法循环遍历对象</p>
+<div class="hljs"><pre><code class="hljs matlab">let arr = &#123;
+  a: <span class="hljs-number">1</span>,
+  b: <span class="hljs-number">2</span>,
+  c: <span class="hljs-number">3</span>
+&#125;
+<span class="hljs-keyword">for</span> (const <span class="hljs-built_in">i</span> in arr) &#123;
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+&#125;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;----------&#x27;</span>)
+<span class="hljs-keyword">for</span> (const <span class="hljs-built_in">i</span> of arr) &#123;
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+&#125;</code></pre></div>
+
+<img src="../images/%E3%80%90Day1%E3%80%91%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/image-20210602181526034.png" srcset="/img/loading.gif" alt="image-20210602181526034" style="zoom:50%;" />
+
+<p>2, 区别2 - 遍历输出结果不同</p>
+<div class="hljs"><pre><code class="hljs matlab">let arr = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>]
+<span class="hljs-keyword">for</span> (const <span class="hljs-built_in">i</span> in arr) &#123;
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+&#125;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;----------&#x27;</span>)
+<span class="hljs-keyword">for</span> (const <span class="hljs-built_in">i</span> of arr) &#123;
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+&#125;</code></pre></div>
+
+<img src="../images/%E3%80%90Day1%E3%80%91%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/image-20210602181649982.png" srcset="/img/loading.gif" alt="image-20210602181649982" style="zoom:50%;" />
+
+<p>3, 区别3 - for..in可遍历自定义属性，for..of不可以</p>
+<div class="hljs"><pre><code class="hljs matlab">let arr = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>]
+arr.name = <span class="hljs-string">&#x27;QQQ&#x27;</span>
+<span class="hljs-keyword">for</span> (const <span class="hljs-built_in">i</span> in arr) &#123;
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+&#125;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;----------&#x27;</span>)
+<span class="hljs-keyword">for</span> (const <span class="hljs-built_in">i</span> of arr) &#123;
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+&#125;</code></pre></div>
+
+<img src="../images/%E3%80%90Day1%E3%80%91%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/image-20210602182613105.png" srcset="/img/loading.gif" alt="image-20210602182613105" style="zoom:50%;" />
 
 
                                     </div>
@@ -254,8 +305,8 @@
                                                         <div class="post-meta">
                                                             <i class="iconfont icon-tags"></i>
                                                             
-                                                                <a class="hover-with-bg" href="/tags/JavaScript/">
-                                                                    JavaScript
+                                                                <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                                                                    面试题
                                                                 </a>
                                                                 
                                                         </div>
@@ -267,9 +318,9 @@
                                                         <article class="post-prev col-6">
                                                             
                                                                 
-                                                                    <a href="/2021/05/26/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">
+                                                                    <a href="/2021/06/02/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">
                                                                         <i class="iconfont icon-arrowleft"></i>
-                                                                        <span class="hidden-mobile">防抖节流</span>
+                                                                        <span class="hidden-mobile">常见面试问题汇总</span>
                                                                         <span class="visible-mobile">上一篇</span>
                                                                     </a>
                                                                     
@@ -277,8 +328,8 @@
                                                         <article class="post-next col-6">
                                                             
                                                                 
-                                                                    <a href="/2021/05/15/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%983/">
-                                                                        <span class="hidden-mobile">常见面试题3</span>
+                                                                    <a href="/2021/05/26/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/">
+                                                                        <span class="hidden-mobile">防抖节流</span>
                                                                         <span class="visible-mobile">下一篇</span>
                                                                         <i class="iconfont icon-arrowright"></i>
                                                                     </a>
@@ -442,7 +493,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "微信小程序支付相关&nbsp;",
+        "公司真题1&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

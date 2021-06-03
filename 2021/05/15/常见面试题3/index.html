@@ -1,0 +1,731 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avater.jpeg">
+  <link rel="icon" type="image/png" href="/img/avater.jpeg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="wangyaru">
+  <meta name="keywords" content="">
+  <title>常见面试题3 - Wangyaru的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/foundation.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Wangyaru</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/article.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2021-05-15 19:18" pubdate>
+      2021年5月15日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-lg-8 nopadding-md">
+                <div class="container nopadding-md" id="board-ctn">
+                    <div class="py-5" id="board">
+                        <article class="post-content mx-auto" id="post">
+                            <!-- SEO header -->
+                            <h1 style="display: none">
+                                常见面试题3
+                            </h1>
+                            
+                                    <div class="markdown-body" id="post-body">
+                                        <h5 id="1，git常见命令"><a href="#1，git常见命令" class="headerlink" title="1，git常见命令"></a>1，git常见命令</h5><p>1，git init 在当前目录新建一个git代码库</p>
+<p>2，git clone 下载一个项目</p>
+<p>3，git config –list 显示当前的git配置</p>
+<p>​      git config -e 编辑git配置文件</p>
+<p>4，设置提交代码时的用户信息：git config –global user.name ‘[name]’</p>
+<p>​      git config –global user.email ‘[email]’</p>
+<p>5,  git add file1 file2 … 添加指定文件到暂存区</p>
+<p>​     git add dir 添加指定目录到暂存区，包括子目录</p>
+<p>​     git add .  添加当前目录的所有文件到暂存区</p>
+<p>6，git rm file1 file2 … 删除工作区文件，并将这次删除放入暂存区</p>
+<p>​      git rm –cached file 停止追踪指定文件，但该文件会保留在工作区</p>
+<p>7，git commit -m message 提交暂存区到仓库区</p>
+<p>​      git commit -v 提交时显示所有diff信息</p>
+<p>8，git branch 列出所有本地分支</p>
+<p>​      git branch -r 列出所有远程分支</p>
+<p>​      git branch -a 列出所有本地分支和所有远程分支</p>
+<p>​      git branch branchName 新建一个分支，并停留在当前分支</p>
+<p>​     git checkout -b branchName 新建一个分支，并切换到该分支</p>
+<p>​     git branch –track branchName remote-branch </p>
+<p>​     git checkout branchName 切换到指定分支，并更新工作区</p>
+<p>​     git checkout -  切换到上一个分支</p>
+<p>​     git merge branchName 合并指定分支到当前分支</p>
+<p>​     git cherry-pink commit 选择一个commit，合并进当前分支</p>
+<p>​     git branch -d branchName 删除分支</p>
+<p>​     git push origin –delete branchName 删除远程分支</p>
+<p>​     git branch -d 和 git branch -D区别：都是删除本地分支的方法；git branch -d 会在删除前检查merge状态  git branch -D 强制删除</p>
+<p>9，git tag 列出所有tag</p>
+<p>​     git tag tagName 创建一个tag在当前commit</p>
+<p>​     git tag tagName commit  创建一个tag在指定commit</p>
+<p>​     git push origin tagName 提交tag到远程仓库</p>
+<p>​     git tag -d  tagName 删除本地tag</p>
+<p>​     git push origin :refs/tags/tagName 删除远程tag</p>
+<p>​     git show tagName 查看tag信息</p>
+<p>​     git push origin –tags 提交所有tag</p>
+<p>​     git checkout -b branchName tagName 新建一个分支，指向某个tag</p>
+<p>10, git status 查看有变更的文件</p>
+<p>​     git log 查看当前分支的版本历史</p>
+<p>​    git log –stat 显示commit历史</p>
+<p>​    git shortlog -sn 显示所有提交过的用户，按提交次数排序</p>
+<p>​     git blame fileName 显示指定文件是什么人在什么时间修改过</p>
+<p>​     git diff 显示暂存区和工作区的差异</p>
+<p>​     git diff –cached fileName 显示暂存区和上一个commit的差异</p>
+<p>​     git reflog 显示当前分支的最近几次提交</p>
+<p>11，git remote -v 显示所有远程仓库</p>
+<p>​       git pull origin branchName  拉远程仓库的变化，并与本地分支合并</p>
+<p>​       git push origin branchName 上传本地指定分支到远程仓库</p>
+<p>​       git push origin –force  强行推送当前分支到远程仓库，即便有冲突</p>
+<p>​       git push origin –all 推送所有分支到远程仓库</p>
+<p>12，git checkout file 恢复暂存区的指定文件到工作区</p>
+<p>​        git checkout .  恢复暂存区的所有文件到工作区</p>
+<p>​        git reset file  重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</p>
+<p>​        git reset –hard 重置暂存区与工作区，与上一次commit保持一致</p>
+<p>​        git reset –hard commitId 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</p>
+<p>​        git stash. 暂时将未提交的变化移除，稍后在移入</p>
+<p>​        git stash pop  从git栈中获取最近一次stash进去的内容，恢复工作区的内容，会删除栈中的stash</p>
+<p>​        git stash apply 恢复工作区的内容，但是stash列表中的信息会继续保留</p>
+<p>​        git stash list 显示所有工作区内容的备份</p>
+<p>​        git stash clear 清空git栈</p>
+<h5 id="2，真题1"><a href="#2，真题1" class="headerlink" title="2，真题1"></a>2，真题1</h5><div class="hljs"><pre><code class="hljs javascript"><span class="hljs-number">1</span>，<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)
+&#125;, <span class="hljs-number">0</span>)
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>&#123;
+  resolve(<span class="hljs-number">2</span>)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span>)
+&#125;).then(<span class="hljs-built_in">console</span>.log)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>)</code></pre></div>
+
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%983/image-20210517203650078.png" srcset="/img/loading.gif" alt="image-20210517203650078"></p>
+<h5 id="3，防抖和节流"><a href="#3，防抖和节流" class="headerlink" title="3，防抖和节流"></a>3，防抖和节流</h5><h6 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h6><p>防抖是面试时候手写代码常考的题目。</p>
+<p>我们在监听 onkeyup 事件时，监听 input 中输入的文字，我们可以在console中看到input的文字打印</p>
+<div class="hljs"><pre><code class="hljs plain"></code></pre></div>
+
+
+
+<h5 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4, 闭包"></a>4, 闭包</h5><p><strong>闭包</strong>是指有权访问另一个函数作用域中的变量的函数。</p>
+<p>创建闭包最常见的方式就是在一个函数内部创建另一个函数。</p>
+<p>闭包中的this对象</p>
+<p>我们知道this对象在运行时基于函数的执行环境绑定的：在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。匿名函数的执行环境具有全局性，因此其this对象通常指向window。</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&#x27;window&#x27;</span>
+<span class="hljs-keyword">var</span> obj = &#123;
+  name: <span class="hljs-string">&#x27;obj&#x27;</span>,
+  getName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    	<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name
+    &#125;
+  &#125;
+&#125;
+<span class="hljs-built_in">console</span>.log(obj.getName()()) <span class="hljs-comment">// &#x27;window&#x27;</span></code></pre></div>
+
+
+
+<p>以上代码，创建了一个全局name，又创建了一个包含name属性的对象。geName返回一个匿名函数，而匿名函数又返回this.name，因为getName()返回了一个函数，所以调用obj.getName()()就会立即调用他返回的函数，结果就是返回一个字符串，然而，这个例子返回的字符串是”window”, 即全局变量name的值。为什么匿名函数没有取得其包含作用域的this对象呢？</p>
+<p>每个函数在被调用的时候都会自动取的两个特殊变量：this、arguments，内部函数在搜索这两个变量时，只会搜索到其活动对象为止，因此永远不可能直接访问外部函数中的这两个变量。不过，把外部作用域中的this对象保存在一个闭包能够访问的变量里，就可以让闭包访问该对象了。</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&#x27;window&#x27;</span>
+<span class="hljs-keyword">var</span> obj = &#123;
+  name: <span class="hljs-string">&#x27;obj&#x27;</span>,
+  getName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> that = <span class="hljs-built_in">this</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    	<span class="hljs-keyword">return</span> that.name
+    &#125;
+   &#125;
+ &#125;
+<span class="hljs-built_in">console</span>.log(obj.getName()()) <span class="hljs-comment">// &#x27;obj&#x27;</span></code></pre></div>
+
+<p>在定义匿名函数之前，我们把this对象赋值给了一个叫that的变量。而在定义了闭包之后，闭包也可以访问这个变量，因为他是我们在包含函数中特意声明的一个变量。即使在函数返回之后，that也仍然引用着obj，所以调用obj.getName()()就返回了”obj”</p>
+<p>闭包经典面试题</p>
+<div class="hljs"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> (var <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>; <span class="hljs-built_in">i</span> &lt;= <span class="hljs-number">5</span>; <span class="hljs-built_in">i</span>++) &#123;
+  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">timer</span><span class="hljs-params">()</span> &#123;</span>
+  	console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>);
+  &#125;, <span class="hljs-number">1000</span>);
+&#125;</code></pre></div>
+
+<p>会先输出一个”5”，然后每隔1000ms输出一个6</p>
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%983/image-20210518133943594.png" srcset="/img/loading.gif" alt="image-20210518133943594"></p>
+<p>setTimeout有两个参数，第一个参数是回调函数，第二个参数是毫秒数，表示要执行回调函数所要延迟的时间, setTimeout会返回一个Id，即这个定时器的Id，在上面的代码中其实已经创建了5个定时器，但是默认只返回了最后的一个Id，所以会先输出一个5。</p>
+<p>为什么会输出5个6呢？因为setTimeout()函数要等执行完函数调用栈中的代码，然后才会立即调用定时器。这是因为，定时器被放在了一个被称为队列的数据结构中，等待上下文的可执行的代码运行完毕后，才开始运行定时器，也就是定时器才开始计时。所以在定时器的方法执行的时候，变量 i 已经变成了6，所以输出的全部是6。</p>
+<p>怎么样才能输出12345呢</p>
+<p>因为5个定时器所打印出来的是同一个变量 i， 所以想要实现输出不同的数字，就需要把每一个定时器所访问的变量独立起来，这就用到了js闭包，闭包用途很多，可以很好的分开各个作用域，避免变量的混淆，但是滥用闭包会导致性能问题。</p>
+<div class="hljs"><pre><code class="hljs lisp">for (<span class="hljs-name">var</span> i = <span class="hljs-number">1</span><span class="hljs-comment">; i &lt;= 5; i++) &#123;</span>
+        (<span class="hljs-name">function</span>(<span class="hljs-name">i</span>) &#123;
+            setTimeout(<span class="hljs-name">function</span> timer() &#123;
+                console.log(<span class="hljs-name">i</span>)
+            &#125;, <span class="hljs-number">1000</span>)
+        &#125;)(<span class="hljs-name">i</span>)
+    &#125;</code></pre></div>
+
+<p><img src="/images/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%983/image-20210518135717649.png" srcset="/img/loading.gif" alt="image-20210518135717649"></p>
+<div class="hljs"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> (let <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>; <span class="hljs-built_in">i</span> &lt;= <span class="hljs-number">5</span>; <span class="hljs-built_in">i</span>++) &#123;
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> &#123;</span>
+            console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">i</span>)
+        &#125;, <span class="hljs-number">1000</span>)
+    &#125;</code></pre></div>
+
+<h6 id="闭包的使用场景"><a href="#闭包的使用场景" class="headerlink" title="闭包的使用场景"></a>闭包的使用场景</h6><p>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，闭包就是能够读取其他函数内部变量的函数。所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f1</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> n = <span class="hljs-number">999</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f2</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(n);
+    &#125;
+    <span class="hljs-keyword">return</span> f2;
+&#125;
+<span class="hljs-keyword">var</span> result = f1();
+result();<span class="hljs-comment">//999</span></code></pre></div>
+
+<p>函数f2就被包括在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1就是不可见的。</p>
+<p>这就是Javascript语言特有的”链式作用域”结构（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
+<p>既然f2可以读取f1中的局部变量，那么只要把f2作为返回值，就可以在f1外部读取它的内部变量了。</p>
+<p><strong>使用场景</strong></p>
+<p>1, setTimeout</p>
+<p>原生的setTimeout传递的第一个函数不能带参数，通过闭包可以实现传参效果</p>
+<div class="hljs"><pre><code class="hljs kotlin">function f1(a) &#123;
+        function f2() &#123;
+            console.log(a)
+        &#125;
+        <span class="hljs-keyword">return</span> f2
+    &#125;
+    <span class="hljs-keyword">var</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> = <span class="hljs-title">f1</span><span class="hljs-params">(<span class="hljs-number">1000</span>)</span></span>
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">fun</span>, 1000)</span></code></pre></div>
+
+
+
+<p>1s之后打印出1000</p>
+<p>2, 函数防抖</p>
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="post-metas mb-3">
+                                            
+                                                <div class="post-meta mr-3">
+                                                    <i class="iconfont icon-category"></i>
+                                                    
+                                                        <a class="hover-with-bg" href="/categories/JavaScript/">
+                                                            JavaScript
+                                                        </a>
+                                                        
+                                                </div>
+                                                
+                                                    
+                                                        <div class="post-meta">
+                                                            <i class="iconfont icon-tags"></i>
+                                                            
+                                                                <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                                                                    面试题
+                                                                </a>
+                                                                
+                                                        </div>
+                                                        
+                                        </div>
+                                        
+                                                
+                                                    <div class="post-prevnext row">
+                                                        <article class="post-prev col-6">
+                                                            
+                                                                
+                                                                    <a href="/2021/05/24/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3/">
+                                                                        <i class="iconfont icon-arrowleft"></i>
+                                                                        <span class="hidden-mobile">微信小程序支付相关</span>
+                                                                        <span class="visible-mobile">上一篇</span>
+                                                                    </a>
+                                                                    
+                                                        </article>
+                                                        <article class="post-next col-6">
+                                                            
+                                                                
+                                                                    <a href="/2021/05/14/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%982/">
+                                                                        <span class="hidden-mobile">常见面试题</span>
+                                                                        <span class="visible-mobile">下一篇</span>
+                                                                        <i class="iconfont icon-arrowright"></i>
+                                                                    </a>
+                                                                    
+                                                        </article>
+                                                    </div>
+                                                    
+                                    </div>
+
+                                    
+                                        <!-- Comments -->
+                                        <article class="comments" id="comments">
+                                            
+                                                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "hjxsDRXYScicliqD8I8JqoTu-gzGzoHsz",
+          app_key: "qUcAEReEqeEVp5wwXJ41uCCp",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+                                        </article>
+                                        
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+                    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+                </div>
+                
+        </div>
+    </div>
+
+    <!-- Custom -->
+    
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+    <div class="text-center py-3">
+
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    
+      <script  src="/js/lazyload.js" ></script>
+    
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "常见面试题3&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "always",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
